@@ -60,7 +60,7 @@
    }
   //FARENHEIT TO KELVIN
    Farenheit.prototype.toKelvin = function () {
-      return ((this.valor + 459.67)*(5/9))
+      return ((this.valor + 459.67)*5/9)
    }
 
   Farenheit.prototype.constructor = Farenheit;
@@ -112,30 +112,32 @@
       numero = parseFloat(numero);
       console.log("Valor: " + numero + ", Temperatura actual: " + from + ", Temperatura a convertir: " + to);
 
-      switch (from && to) {
-          case 'c' && 'f':
+      var aux = from+to
+
+      switch (aux) {
+          case 'cf':
              var celsius = new Celsius(numero);
-             elemento.innerHTML = celsius.toFarenheit() + " Farenheit";
+             elemento.innerHTML = celsius.toFarenheit().toFixed(2) + " Farenheit";
              break;
-          case 'c' && 'k':
-             var celsius = new Celsius(numero+to);
-             elemento.innerHTML = celsius.toKelvin() + " Kelvin";
+          case 'ck':
+             var celsius = new Celsius(numero);
+             elemento.innerHTML = celsius.toKelvin().toFixed(2) + " Kelvin";
              break;
-          case 'f' && 'c':
+          case 'fc':
              var farenheit = new Farenheit(numero);
-             elemento.innerHTML = farenheit.toCelsius() + " Celsius";
+             elemento.innerHTML = farenheit.toCelsius().toFixed(2) + " Celsius";
              break;
-          case 'f' && 'k':
+          case 'fk':
              var farenheit = new Farenheit(numero);
-             elemento.innerHTML = farenheit.toKelvin() + " Kelvin";
+             elemento.innerHTML = farenheit.toKelvin().toFixed(2) + " Kelvin";
              break;
-          case 'k' && 'c':
+          case 'kc':
              var kelvin = new Kelvin(numero);
-             elemento.innerHTML = kelvin.toCelsius() + " Celsius";
+             elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Celsius";
              break;
-          case 'k' && 'f':
+          case 'kf':
              var kelvin = new Kelvin(numero);
-             elemento.innerHTML = kelvin.toFarenheit() + " Farenheit";
+             elemento.innerHTML = kelvin.toFarenheit().toFixed(2) + " Farenheit";
              break;
           default:
            /* rellene este código */
