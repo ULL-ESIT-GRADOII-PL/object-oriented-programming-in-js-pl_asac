@@ -41,9 +41,17 @@
   Farenheit.prototype = Object.create(Temperatura.prototype);
   Farenheit.prototype.constructor = Farenheit;
 
+  function Kelvin(valor) {
+     Temperatura.call(this, valor, 'k');
+ }
+
+ Kelvin.prototype = Object.create(Temperatura.prototype);
+ Kelvin.prototype.constructor = Kelvin;
+
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
   exports.Farenheit = Farenheit;
+  exports.Kelvin = Kelvin;
 
   exports.convertir = function() {
     var valor     = document.getElementById('convert').value,
