@@ -34,3 +34,7 @@ span {
         text-align: center;
     }
 }
+
+.one-half-column a {
+  margin-right: 3%;
+}
