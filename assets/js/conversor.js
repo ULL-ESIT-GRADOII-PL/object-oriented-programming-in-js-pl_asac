@@ -19,8 +19,7 @@
     }
   }
 
-  function Temperatura(valor,tipo)
-  {
+  function Temperatura(valor,tipo){
     /* tipo es opcional. Debería admitir new Medida("45.2 F") */
     Medida.call(this, valor, tipo);
   }
@@ -28,13 +27,19 @@
   Temperatura.prototype = Object.create(Medida.prototype);
   Temperatura.prototype.constructor = Temperatura;
 
-  function Celsius(valor)
-  {
+  function Celsius(valor){
+    Temperatura.call(this, valor, 'c')
   }
 
-  function Farenheit(valor)
-  {
+  Celsius.prototype = Object.create(Temperatura.prototype);
+  Celsius.prototype.constructor = Celsius;
+
+  function Farenheit(valor){
+    Temperatura.call(this, valor, 'f')
   }
+
+  Farenheit.prototype = Object.create(Temperatura.prototype);
+  Farenheit.prototype.constructor = Farenheit;
 
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
