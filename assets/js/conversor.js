@@ -98,10 +98,10 @@
         //regexp    = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i,
 
 //        regexp    = /^\s*([+-]?\d+(?:\.\d*)?(?:e[+-]?\d+)?)\s*([ckf])\s*(?:to)?\s*([ckf])\s*$/i,
-        regexp    = XRegExp('\\s*(?<numero> [+-]?\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?)\\s*  # numero  \n' +
+        regexp    = XRegExp('^\\s*(?<numero> [+-]?\\d+(?:\\.\\d*)?(?:e[+-]?\\d+)?)\\s*  # numero  \n' +
                           '(?<tactual> [ckf])\\s+  # TempActual \n' +
                           '(?<to> to\\s+)?' +
-                          '(?<tdestino> [ckf])\\s* # TempDestino \n', 'xi'),
+                          '(?<tdestino> [ckf])\\s*$ # TempDestino \n', 'xi'),
         valor     = valor.match(regexp);
 
     if (valor) {
