@@ -21,5 +21,6 @@
   },
   "homepage": "https://github.com/aluXXXXXXX/STW03",
   "devDependencies": {
+    "xregexp": "^3.1.0"
   }
 }
