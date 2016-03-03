@@ -38,3 +38,11 @@ span {
 .one-half-column a {
   margin-right: 3%;
 }
+
+.salidaError {
+  color: red;
+}
+
+.salidaValido {
+  color: green;
+}
