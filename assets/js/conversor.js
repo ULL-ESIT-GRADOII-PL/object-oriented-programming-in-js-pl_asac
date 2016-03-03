@@ -143,9 +143,11 @@
            /* rellene este código */
            elemento.innerHTML = " Conversión imposible";
       }
+//      document.getElementById("converted").style.color = "green";
     }
     else
-      elemento.innerHTML = "";
+      elemento.innerHTML = "Error, cadena incorrecta. Ejemplo válido: -3.5e2c to f";
+//      document.getElementById("converted").style.color = "red";
   }
 
 })(this);
