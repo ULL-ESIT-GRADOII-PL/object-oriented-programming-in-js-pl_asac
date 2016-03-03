@@ -114,6 +114,8 @@
 
       var aux = from+to
 
+      elemento.className = "salidaValido";
+      
       switch (aux) {
           case 'cf':
              var celsius = new Celsius(numero);
@@ -141,13 +143,14 @@
              break;
           default:
            /* rellene este código */
+           elemento.className = "salidaError";
            elemento.innerHTML = " Conversión imposible";
       }
-//      document.getElementById("converted").style.color = "green";
     }
-    else
+    else {
+      elemento.className = "salidaError";
       elemento.innerHTML = "Error, cadena incorrecta. Ejemplo válido: -3.5e2c to f";
-//      document.getElementById("converted").style.color = "red";
+    }
   }
 
 })(this);
